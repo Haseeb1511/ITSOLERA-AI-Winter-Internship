@@ -8,17 +8,17 @@ This project classifies images of cats and dogs using traditional ML algorithms 
 
 ![Alt text](images/1.png)
 ![Alt text](images/2.png)
-![Alt text](images/3.png)
+![Alt text](pimages/3.png)
 
 ## Project Structure
-
+```bash
 .
 ├─ app.py               # Streamlit app
 ├─ requirements.txt     # Required packages
 ├─ src/
 │   └─ utilities.py     # Helper functions
 └─ notebook/notebook/Porject_1_Image_class_ML.ipynb
-
+```
 
 ## Dataset
 
