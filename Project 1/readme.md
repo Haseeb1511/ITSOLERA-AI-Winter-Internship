@@ -30,7 +30,7 @@ Cat & Dog images used for training and evaluation.
 
 **SVM**  
 - Accuracy Score: 0.683  
-- Precision Score: {precision}  
+- Precision Score: 0.71  
 - Recall Score: 0.617  
 - Confusion Matrix:  
 ![SVM Confusion Matrix](images/svm_cm.png)
@@ -38,14 +38,14 @@ Cat & Dog images used for training and evaluation.
 
 **Random Forest**  
 - Accuracy Score: 0.677  
-- Precision Score: {precision}  
+- Precision Score: 0.70
 - Recall Score: 0.606  
 - Confusion Matrix:  
 ![RF Confusion Matrix](images/rf.png)
 
 **KNN**  
 - Accuracy Score: 0.62  
-- Precision Score: {precision}  
+- Precision Score: 0.63
 - Recall Score: 0.569  
 - Confusion Matrix:  
 ![KNN Confusion Matrix](images/knn.png)
