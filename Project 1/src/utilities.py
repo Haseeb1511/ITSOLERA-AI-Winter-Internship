@@ -4,29 +4,6 @@ from PIL import Image
 import cv2
 from skimage.feature import local_binary_pattern
 
-def preprocessing(data_path,img_size=(64,64)):
-    x = []
-    y = []
-    for cls in os.listdir(data_path):
-        cls_path = os.path.join(data_path,cls)
-    
-        if os.path.isdir(cls_path):
-            label = 0 if cls=="cats" else 1 # label for out data
-            for img_name in os.listdir(cls_path):
-                img_path = os.path.join(cls_path,img_name)  
-                #load and converto to RGB
-                img = Image.open(img_path).convert("RGB")
-                #resize
-                img = img.resize(img_size)
-                #np array
-                img_arr = np.array(img)
-                #normalize
-                img_arr = img_arr / 255.0
-                img_arr = img_arr.flatten()
-                x.append(img_arr)
-                y.append(label)
-    return x,y
-
 
 def color_hist(img,bins=10):
     # img must be numpy array in RGB for color Histogram
