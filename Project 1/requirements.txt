@@ -4,3 +4,9 @@ pandas
 numpy
 opencv-python
 scikit-image
+
+
+fastapi
+pydantic
+uvicorn
+python-multipart
