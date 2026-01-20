@@ -10,14 +10,39 @@ This project classifies images of cats and dogs using traditional ML algorithms 
 ![Alt text](images/2.png)
 ![Alt text](images/3.png)
 
+# Docker 
+![Alt text](images/docker.png)
+
+
+## Run App
+
+```bash
+docker compose up # to run the project
+
+# for testing
+http://localhost:8501  # to test streamlit
+http://localhost:8000   # to test fast api
+
+```
+
 ## Project Structure
 ```bash
-.
-├─ app.py               # Streamlit app
-├─ requirements.txt     # Required packages
-├─ src/
-│   └─ utilities.py     # Helper functions
-└─ notebook/notebook/Porject_1_Image_class_ML.ipynb
+Project 1/
+ ├─ backend/
+ │   ├─ app.py           # FastAPI app
+ │   ├─ requirements.txt # FastAPI dependencies
+ │   └─ ...other backend files
+ ├─ frontend/
+ │   ├─ streamlit.py     # Streamlit app
+ │   ├─ requirements.txt # Streamlit dependencies
+ │   
+ ├─ models/
+ │   ├─ svm_pipeline
+ │   ├─ rf_pipeline
+ │   └─ knn_pipeline
+ └─ notebook/
+     └─ Project_1_Image_class_ML.ipynb
+
 ```
 
 ## Dataset
@@ -25,6 +50,10 @@ This project classifies images of cats and dogs using traditional ML algorithms 
 Cat & Dog images used for training and evaluation.
 
 ---
+
+
+
+
 
 ## Results
 
@@ -55,10 +84,15 @@ Cat & Dog images used for training and evaluation.
 
 ---
 
-## Run App
+## 📦 Tech Stack & Their Use
 
-```bash
-streamlit run app.py
+| Technology / Library | Purpose in Project |
+|---------------------|------------------|
+| **Streamlit** | Frontend web app for uploading images, choosing model, displaying predictions and logged history. |
+| **FastAPI** | Backend API that receives uploaded images, preprocesses them, predicts using ML models, and logs results to the database. |
+| **Docker** | Containerization to run both frontend and backend independently, with shared volumes for database and images. |
+| **SQLite** | Lightweight database to store image filenames, predicted labels, and timestamps for logging purposes. |
+| **scikit-learn** | Provides ML models (`SVM`, `Random Forest`, `KNN`) trained on Cat & Dog images. |
+| **scikit-image (skimage)** | Used for HOG (Histogram of Oriented Gradients) feature extraction from images before prediction. |
 
-```
-
+---

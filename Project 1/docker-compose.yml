@@ -1,0 +1,44 @@
+
+services:
+  fastapi:
+    build:
+      context: .                               # build docker compose from root directery
+      dockerfile: backend/Dockerfile.fastapi   #dockerfile path
+    container_name: fastapi_service
+    ports:
+      - "8000:8000"
+    networks:
+      - app_network
+    volumes:
+      - shared-data:/app/data   # share same volume (for database)
+
+  streamlit:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile.streamlit
+
+    container_name: streamlit_service
+    ports:
+      - "8501:8501"
+    depends_on:
+      - fastapi
+    environment:
+      - API_URL=http://fastapi:8000   #url to hit make change according
+    networks:
+      - app_network
+    volumes:
+      - shared-data:/app/data   # share same volume (for database)
+
+networks:
+  app_network:
+    driver: bridge
+
+volumes:
+  shared-data:
+
+
+
+##====================== FOr local Testing instead of image
+  #  build:
+  #     context: ./backend
+  #     dockerfile: Dockerfile.fastapi
