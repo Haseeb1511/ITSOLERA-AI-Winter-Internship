@@ -1,0 +1,7 @@
+streamlit # for building the web application
+pandas # for data manipulation and analysis
+numpy # for numerical operations
+matplotlib # for data visualization
+seaborn # for statistical data visualization
+scikit-learn # for machine learning algorithms
+sdv # for synthetic data generation
